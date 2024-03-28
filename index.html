@@ -1,0 +1,481 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css">
+        <style>
+            * {
+                box-sizing:border-box;
+                
+              }
+              
+              body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-repeat:initial;
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(221,33,112,1) 35%, rgba(0,212,255,1) 100%);
+              }
+              
+              header {
+                background-color: #efdada;
+                padding: 20px;
+                text-align: center;
+                font-size: 35px;
+                color: black;
+              }
+
+              ul {
+                list-style-type: none;
+                margin: 10;
+                width: fit-content;
+                overflow: hidden;
+               font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+                font-size: 15px;
+              }
+              
+              li {
+                float: left;
+              }
+              a {
+                display: block;
+                color: white;
+                text-align: left;
+                padding: 5px;
+                text-decoration: none;
+                border: 2px solid white;
+                border-radius: 8px;
+                padding: 5px;
+                margin-top: 30px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+              }
+
+              table {
+                margin-top: 50px;
+                font-family: arial, sans-serif;
+                border-collapse:collapse;
+                width: 70%;
+                border: 2px solid  #b1458d;
+                width: 80%;
+                margin: 20vh auto 0 auto;
+                box-shadow: white;
+              }
+              
+              th {
+                background-color: (83, 198, 224);
+                color: black;
+                text-align: left;
+                padding: 5px;
+                text-align: center;
+              }
+              
+              tr {
+                background-color:  white;
+                color: black;
+                border: 2px solid   #b1458d;
+                border-radius: 8px;
+                padding: 5px;
+              }
+              td {
+                background-color: white;
+                color: black;
+                padding: 5px;
+              }
+
+              dialog {
+                color: black;
+                border: 3.5px solid  #b1458d;
+                border-radius: 10px;
+                padding: 5px;
+                width: 800px;
+              }
+              
+              form{
+                background-color: white;
+                text-align: center;
+              }
+              input[type=text] {
+                border: none;
+                border-bottom: 2px solid  #b1458d;
+                background-color: white;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+              }
+              input[type=date] {
+                border: none;
+                background-color: white;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+              }
+              input.in1[type=submit] {
+                border: 2px solid;
+                background-color: #b1458d;
+                color: white;
+                border-radius: 5px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+                padding: 10px;
+                margin: 20px 0px;
+                cursor: pointer;
+                font-size: 20px;
+                width: 80%;
+              }
+              label{
+                background-color: white;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+              }
+
+              .input-group{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                font-size: 16px;
+              }
+              .input-group input:focus{
+                overflow: 0;
+              }
+
+              button{
+                background-color: white;
+                border: 2px solid white;
+                border-radius: 8px;
+                padding: 5px;
+                float: right;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+                
+              }
+              h1{
+                color: white;
+                text-align: center;
+                margin-top: 50px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+                font-size: 30px;
+              }
+              h2{
+                background-color: white;
+                color: black;
+                text-align: center;
+                margin-top: 10px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: italic;
+               
+              }
+              p{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: white;
+                text-align: center;
+                margin-top: 50px;
+                font-style: italic;
+                font-size:50px;
+              }
+              .error{
+                color: red;
+                font-size: 12px;
+                margin-top: 5px;
+              }
+
+              .input-group.error input{
+                border-color: rgb(226, 35, 35);
+              }
+
+              .success{
+                color: rgb(25, 174, 25);
+                font-size: 12px;
+                margin-top: 5px;
+              }
+
+              .input-group.success input{
+                border-color: #32e14c;
+              }
+              .btn {
+                border: none;
+                background-color: #b1458d; 
+                color: white;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+            
+            .btn:hover {
+                color: white;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+      <ul>
+          <a href="#" id="openAddTaskDialog">Add Task</a>
+      </ul>
+
+      <h1>Task Organizer</h1>
+      <p> one stop to orginize your schedule</p>
+
+      <dialog id="addTaskDialog">
+        <h2>Add task</h2>
+
+        <form id="taskForm" onsubmit="return validateInputs(event)" method="post">
+            <div class="input-group">
+              <label for="Tcode">Task code:</label >
+              <input type="text" id="Tcode" name="Tcode" placeholder="Task code..." ><br><br>
+              <div class="error"></div>
+            </div>
+
+            <div class="input-group">
+              <label for="Tname">Task name:</label >
+              <input type="text" id="Tname" name="Tname" placeholder="Task name..." ><br><br>
+              <div class="error"></div>
+            </div>
+
+            <div class="input-group">
+              <label for="Tdescription">Task description:</label>
+              <input type="text" id="Tdescription" name="Tdescription" placeholder="Task description..." ><br><br>
+              <div class="error"></div>
+            </div>
+            
+            <div class="input-group">
+              <label for="Tdate">Task date:</label>
+              <input type="date" id="taskdate" name="taskname" ><br><br>
+              <div class="error"></div>
+            </div>
+
+            <input class="in1" type="submit" value="Submit">
+          </form>
+          <button id="closeAddTaskDialog">Close</button>
+      </dialog>
+  
+      <div id="taskDetails">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Task code</th>
+                      <th>Task Name</th>
+                      <th>Task Description</th>
+                      <th>Task Date</th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody id="taskTableBody">
+                  <!-- Table rows will be dynamically populated here -->
+              </tbody>
+          </table>
+      </div>
+  
+      <script>
+
+        function validateInputs(event) {
+          var taskCode = document.getElementById("Tcode").value.trim();
+          var taskName = document.getElementById("Tname").value.trim();
+          var taskDescription = document.getElementById("Tdescription").value.trim();
+          var taskDate = document.getElementById("taskdate").value.trim();
+  
+          let Validcode = true;
+          let Validname = true;
+          let Validdecs = true;
+          let Validdate = true;
+  
+          // Validate task code
+          // Validate task code
+          if (taskCode === "") {
+            seterror(document.getElementById("Tcode"), "Task code is required");
+            Validcode = false;
+          } else if (!taskCode.startsWith("#")) {
+            seterror(document.getElementById("Tcode"), "The task code must start with '#' symbol");
+            Validcode = false;
+          } else if (taskCode.length !== 8) {
+            seterror(document.getElementById("Tcode"), "Task code should contain exactly 8 characters or numbers");
+            Validcode = false;
+          } else {
+            // Check if the task code is already used
+            var taskRows = document.querySelectorAll("#taskTableBody tr");
+            taskRows.forEach(function(row) {
+                if (row.cells[0].textContent === taskCode) {
+                    seterror(document.getElementById("Tcode"), "Task code must be unique");
+                    Validcode = false;
+                }
+            });
+
+            // If the task code is unique, set success
+            if (Validcode) {
+                setSuccess(document.getElementById("Tcode"));
+            }
+          }
+
+  
+          // Validate task name
+          if (taskName === "") {
+              seterror(document.getElementById("Tname"), "Task name is required");
+              Validname = false;
+          } else {
+              setSuccess(document.getElementById("Tname"));
+          }
+  
+          // Validate task description
+          if (taskDescription === "") {
+              seterror(document.getElementById("Tdescription"), "Task description is required");
+              Validdecs = false;
+          } else if (taskDescription.length > 300) {
+              seterror(document.getElementById("Tdescription"), "Task description should be less than 300 characters");
+              Validdecs = false;
+          } else {
+              setSuccess(document.getElementById("Tdescription"));
+          }
+  
+          // Validate task date
+          const today = new Date();
+          const selectedDate = new Date(taskDate);
+          if (taskDate === "") {
+              seterror(document.getElementById("taskdate"), "Task date is required");
+              Validdate = false;
+          } else if (selectedDate < today) {
+              seterror(document.getElementById("taskdate"), "Task date must be today or later");
+              Validdate = false;
+          } else {
+              setSuccess(document.getElementById("taskdate"));
+          }
+  
+          console.log("Stored task data:", 'testttt');
+
+          
+          // Check if all validations passed
+          if (Validcode && Validname && Validdecs && Validdate) {
+            // Create object to store task data
+            var taskData = {
+                code: taskCode,
+                name: taskName,
+                description: taskDescription,
+                date: taskDate
+            };
+    
+            // Store task data in localStorage
+            localStorage.setItem("taskData", JSON.stringify(taskData));
+    
+            // Append task data to the task details table
+            var taskTableBody = document.getElementById("taskTableBody");
+            var newRow = document.createElement("tr");
+    
+            // Create and append table cells
+            var codeCell = document.createElement("td");
+            codeCell.textContent = taskData.code;
+            newRow.appendChild(codeCell);
+    
+            var nameCell = document.createElement("td");
+            nameCell.textContent = taskData.name;
+            newRow.appendChild(nameCell);
+    
+            var descriptionCell = document.createElement("td");
+            descriptionCell.textContent = taskData.description;
+            newRow.appendChild(descriptionCell);
+    
+            var dateCell = document.createElement("td");
+            dateCell.textContent = taskData.date;
+            newRow.appendChild(dateCell);
+    
+            var editCell = document.createElement("td");
+            var editButton = document.createElement("button");
+            editButton.classList.add("btn");
+            editButton.innerHTML = '<i class="fas fa-edit"></i>';
+            editButton.addEventListener("click", function() {
+                // Populate edit dialog with current task data
+                var prevTaskData = {
+                  code: codeCell.textContent,
+                  name: nameCell.textContent,
+                  description: descriptionCell.textContent,
+                  date: dateCell.textContent
+              };
+      
+              // Populate dialog input fields with previous data
+              document.getElementById("Tcode").value = prevTaskData.code;
+              document.getElementById("Tname").value = prevTaskData.name;
+              document.getElementById("Tdescription").value = prevTaskData.description;
+              document.getElementById("taskdate").value = prevTaskData.date;
+      
+              // Show the dialog
+              addTaskDialog.showModal();
+      
+              // Handle submission of edited task
+              document.getElementById("taskForm").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Prevent the default form submission
+                  // Update table cell values with edited data
+                  codeCell.textContent = document.getElementById("Tcode").value;
+                  nameCell.textContent = document.getElementById("Tname").value;
+                  descriptionCell.textContent = document.getElementById("Tdescription").value;
+                  dateCell.textContent = document.getElementById("taskdate").value;
+      
+                  // Close the dialog
+                  addTaskDialog.close();
+              });
+          
+                });
+            
+            editCell.appendChild(editButton);
+            newRow.appendChild(editCell);
+    
+            var deleteCell = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.classList.add("btn");
+            deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+            deleteButton.addEventListener("click", function() {
+                taskTableBody.removeChild(newRow);
+            });
+            deleteCell.appendChild(deleteButton);
+            newRow.appendChild(deleteCell);
+    
+            // Append the row to the table body
+            taskTableBody.appendChild(newRow);
+    
+            // Close the dialog
+            addTaskDialog.close();
+            document.getElementById("taskForm").reset();
+    
+            // Prevent the default form submission
+            event.preventDefault();
+        } else {
+            // If validation fails, prevent the form submission
+            event.preventDefault();
+        }
+    }
+      
+  
+      function seterror(element, message) {
+          const inputGroup = element.parentElement;
+          const errorElement = inputGroup.querySelector('.error');
+          errorElement.innerText = message;
+          inputGroup.classList.add('error');
+          inputGroup.classList.remove('success');
+      }
+  
+      function setSuccess(element) {
+          const inputGroup = element.parentElement;
+          const errorElement = inputGroup.querySelector('.error');
+          errorElement.innerText = '';
+          inputGroup.classList.remove('error');
+          inputGroup.classList.add('success');
+      }
+  
+      // Get references to the dialog and the button to open it
+      var addTaskDialog = document.getElementById('addTaskDialog');
+      var openAddTaskDialogButton = document.getElementById('openAddTaskDialog');
+      var closeAddTaskDialogButton = document.getElementById('closeAddTaskDialog');
+  
+      // Open the dialog when the button is clicked
+      openAddTaskDialogButton.addEventListener('click', function() {
+          addTaskDialog.showModal();
+      });
+          // Close the dialog when the close button is clicked
+          closeAddTaskDialogButton.addEventListener('click', function() {
+              addTaskDialog.close();
+          });
+
+          
+            
+          
+      </script>
+  </body>
+  </html>
